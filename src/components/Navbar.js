@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const navItems = [
+<<<<<<< HEAD
   { name: 'Sobre Nosotros', link: '#about' },
   { name: 'Membership', link: '#membership' },
   // { name: 'Sobre Nosotros', link: '#about', dropdown: ['Mission', 'Vision', 'Team'] },
@@ -11,6 +12,14 @@ const navItems = [
   // { name: 'Publications', link: '#publications', dropdown: ['Journals', 'Books', 'Guidelines'] },
   // { name: 'Awards & Grants', link: '#awards', dropdown: ['Apply', 'Recipients', 'Donate'] },
   // { name: 'Advocacy', link: '#advocacy' },
+=======
+  { name: 'About Us', link: '#about', dropdown: ['Mission', 'Vision', 'Team'] },
+  { name: 'Membership', link: '#membership', dropdown: ['Benefits', 'Join', 'Renew'] },
+  { name: 'Meetings & Events', link: '#events', dropdown: ['Annual Meeting', 'Webinars', 'Calendar'] },
+  { name: 'Publications', link: '#publications', dropdown: ['Journals', 'Books', 'Guidelines'] },
+  { name: 'Awards & Grants', link: '#awards', dropdown: ['Apply', 'Recipients', 'Donate'] },
+  { name: 'Advocacy', link: '#advocacy' },
+>>>>>>> c6913f9503b8ce6c235e3762a8e8a6ecbcdf6ea2
   { name: 'News', link: '#news' },
   { name: 'Contact', link: '#contact' },
 ];
@@ -28,6 +37,7 @@ const Navbar = () => {
     setOpenDropdown(openDropdown === itemName ? null : itemName);
   };
 
+<<<<<<< HEAD
   const [isScrolled, setIsScrolled] = useState(false);
 
   React.useEffect(() => {
@@ -42,6 +52,11 @@ const Navbar = () => {
     <motion.nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
         }`}
+=======
+  return (
+    <motion.nav
+      className="bg-white shadow-md sticky top-0 z-50"
+>>>>>>> c6913f9503b8ce6c235e3762a8e8a6ecbcdf6ea2
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 120, damping: 14 }}
@@ -49,6 +64,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
+<<<<<<< HEAD
 
             <motion.div
               className="ml-3 relative whitespace-nowrap"
@@ -102,6 +118,21 @@ const Navbar = () => {
                     : 'text-white font-bold hover:text-white hover:bg-[#f67b11]'
                     }`}
                   whileHover={{ scale: 1.05 }}
+=======
+            <a href="#" className="flex-shrink-0">
+              <img className="h-8 w-auto" src="https://www.iadr.org/themes/custom/iadr/logo.svg" alt="Logo" />
+            </a>
+          </div>
+          <div className="hidden md:ml-6 md:flex md:space-x-8">
+            {navItems.map((item) => (
+              <div key={item.name} className="relative flex items-center">
+                <motion.a
+                  href={item.link}
+                  className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center"
+                  onMouseEnter={() => item.dropdown && handleDropdownToggle(item.name)}
+                  onMouseLeave={() => item.dropdown && setOpenDropdown(null)}
+                  whileHover={{ scale: 1.05, color: '#2563eb' }}
+>>>>>>> c6913f9503b8ce6c235e3762a8e8a6ecbcdf6ea2
                   whileTap={{ scale: 0.95 }}
                 >
                   {item.name}
@@ -140,7 +171,11 @@ const Navbar = () => {
           <div className="-mr-2 flex items-center md:hidden">
             <button
               onClick={toggleMobileMenu}
+<<<<<<< HEAD
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-600"
+=======
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+>>>>>>> c6913f9503b8ce6c235e3762a8e8a6ecbcdf6ea2
             >
               <span className="sr-only">Open main menu</span>
               {isMobileMenuOpen ? (
@@ -167,7 +202,11 @@ const Navbar = () => {
                 <div key={item.name}>
                   <motion.a
                     href={item.link}
+<<<<<<< HEAD
                     className="text-gray-700 hover:bg-gray-50 hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium"
+=======
+                    className="text-gray-700 hover:bg-gray-50 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium"
+>>>>>>> c6913f9503b8ce6c235e3762a8e8a6ecbcdf6ea2
                     onClick={() => item.dropdown && handleDropdownToggle(item.name)}
                     whileHover={{ backgroundColor: '#f3f4f6' }}
                     whileTap={{ scale: 0.98 }}

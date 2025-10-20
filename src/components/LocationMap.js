@@ -123,12 +123,17 @@ const LocationMap = () => {
   // Esto es un ejemplo simplificado y puede que no funcione con todos los estilos o requiera una API Key.
   // La forma más robusta sería usar una librería de React para Google Maps (ej. @react-google-maps/api)
   // y pasarle los estilos como un prop 'options'.
+<<<<<<< HEAD
 
   const LATITUDE = -16.4917154; // Ejemplo: Coordenada de La Paz, Bolivia
   const LONGITUDE = -68.153224;
   const ZOOM = 15; // Nivel de zoom del mapa
   // const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0000000000005!2d-77.043692!3d38.804836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b123456789ab%3A0x123456789abcdef0!2s1619%20Duke%20St%2C%20Alexandria%2C%20VA%2022314%2C%20USA!5e0!3m2!1sen!2ses!4v1678901234567!5m2!1sen!2ses&key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap&v=weekly&language=en&region=US&maptype=roadmap&sensor=false&output=embed&${encodeURIComponent(JSON.stringify(mapStyles))}`;
   const mapUrl = `https://maps.google.com/maps?q=${LATITUDE},${LONGITUDE}&z=${ZOOM}&ie=UTF8&iwloc=&output=embed`;
+=======
+  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0000000000005!2d-77.043692!3d38.804836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b123456789ab%3A0x123456789abcdef0!2s1619%20Duke%20St%2C%20Alexandria%2C%20VA%2022314%2C%20USA!5e0!3m2!1sen!2ses!4v1678901234567!5m2!1sen!2ses&key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap&v=weekly&language=en&region=US&maptype=roadmap&sensor=false&output=embed&${encodeURIComponent(JSON.stringify(mapStyles))}`;
+
+>>>>>>> c6913f9503b8ce6c235e3762a8e8a6ecbcdf6ea2
 
   return (
     <section className="py-16 bg-gray-100">
