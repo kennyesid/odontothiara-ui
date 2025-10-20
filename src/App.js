@@ -8,6 +8,11 @@ import NewsSection from './components/NewsSection';
 import LocationMap from './components/LocationMap';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import AboutUs from './components/AboutUs';
+import BannerToothDoomsday from './components/BannerToothDoomsday';
+import ServiceSection from './components/ServiceSection';
+import FilosofiaSection from './components/FilosofiaSection';
+import BannerTooth from './components/BannerTooth';
 
 export default function App() {
   return (
@@ -15,10 +20,15 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <ContentSection />
+        <AboutUs />
+        <BannerToothDoomsday />
+        <ServiceSection />
+        <BannerTooth />
+        <FilosofiaSection />
+        {/* <ContentSection />
         <Testimonials />
         <ImageCarousel />
-        <NewsSection />
+        <NewsSection /> */}
         <LocationMap />
         <ContactForm />
       </main>

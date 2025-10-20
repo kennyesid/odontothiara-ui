@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const navItems = [
-  { name: 'About Us', link: '#about', dropdown: ['Mission', 'Vision', 'Team'] },
-  { name: 'Membership', link: '#membership', dropdown: ['Benefits', 'Join', 'Renew'] },
-  { name: 'Meetings & Events', link: '#events', dropdown: ['Annual Meeting', 'Webinars', 'Calendar'] },
-  { name: 'Publications', link: '#publications', dropdown: ['Journals', 'Books', 'Guidelines'] },
-  { name: 'Awards & Grants', link: '#awards', dropdown: ['Apply', 'Recipients', 'Donate'] },
-  { name: 'Advocacy', link: '#advocacy' },
+  { name: 'Sobre Nosotros', link: '#about' },
+  { name: 'Membership', link: '#membership' },
+  // { name: 'Sobre Nosotros', link: '#about', dropdown: ['Mission', 'Vision', 'Team'] },
+  // { name: 'Membership', link: '#membership', dropdown: ['Benefits', 'Join', 'Renew'] },
+  // { name: 'Meetings & Events', link: '#events', dropdown: ['Annual Meeting', 'Webinars', 'Calendar'] },
+  // { name: 'Publications', link: '#publications', dropdown: ['Journals', 'Books', 'Guidelines'] },
+  // { name: 'Awards & Grants', link: '#awards', dropdown: ['Apply', 'Recipients', 'Donate'] },
+  // { name: 'Advocacy', link: '#advocacy' },
   { name: 'News', link: '#news' },
   { name: 'Contact', link: '#contact' },
 ];
@@ -38,7 +40,6 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      // className="bg-white shadow-md sticky top-0 z-50"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
         }`}
       initial={{ y: -100 }}
@@ -48,9 +49,43 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <a href="#" className="flex-shrink-0">
-              <img className="h-8 w-auto" src="https://www.iadr.org/themes/custom/iadr/logo.svg" alt="Logo" />
-            </a>
+
+            <motion.div
+              className="ml-3 relative whitespace-nowrap"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              <div className="flex items-center space-x-2">
+                <a href="#" className="flex-shrink-0 pb-1">
+                  <img className="h-8 w-auto" src="images/tooth-02.png" alt="Logod" />
+                </a>
+                <span className={`text-2xl font-bold ${isScrolled ? 'text-gray-800' : 'text-white drop-shadow-[0_0_3px_black]'} relative z-10 font-parisienne `}>
+                  Thiara Arte Dental
+                </span>
+                <motion.div
+                  className="absolute bottom-0 left-0 h-1"
+                  style={{ background: '#f67b11' }}
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 1, duration: 1.8 }}
+                />
+              </div>
+
+            </motion.div>
+            {/* <div className="ml-3">
+              {["T", "h", "i", "a", "r", "a", " ", "A", "r", "t", "e", " ", "D", "e", "n", "t", "a", "l"].map((letter, index) => (
+                <motion.span
+                  key={index}
+                  className="text-xl font-bold text-gray-800"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 + index * 0.05, duration: 0.5 }}
+                >
+                  {letter}
+                </motion.span>
+              ))}
+            </div> */}
           </div>
           <div className="hidden md:ml-6 md:flex md:space-x-8">
             {navItems.map((item) => (
@@ -62,9 +97,9 @@ const Navbar = () => {
                 <motion.a
                   href={item.link}
                   // className="text-white hover:text-gray-600 hover:bg-white px-3 py-2 rounded-md text-sm font-medium flex items-center"
-                  className={`cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-300 ${isScrolled
-                    ? 'text-gray-800 hover:text-orange-600'
-                    : 'text-white hover:text-gray-200'
+                  className={`cursor-pointer px-3 py-2  text-sm font-medium flex items-center transition-colors duration-300 ${isScrolled
+                    ? 'text-gray-800 hover:text-white hover:bg-[#f67b11]'
+                    : 'text-white font-bold hover:text-white hover:bg-[#f67b11]'
                     }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
